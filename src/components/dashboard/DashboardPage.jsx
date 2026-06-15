@@ -83,10 +83,7 @@ export default function DashboardPage({
               Valor del Inventario
             </p>
             <p className="text-2xl font-bold text-slate-950 mt-1">
-              {new Intl.NumberFormat("es-ES", {
-                style: "currency",
-                currency: "EUR",
-              }).format(dashboardStats.totalValue)}
+              ${dashboardStats.totalValue.toLocaleString()} MXN
             </p>
           </div>
         </div>
@@ -222,7 +219,6 @@ export default function DashboardPage({
             </p>
 
             <div className="space-y-4">
-              console.log("categories:", categories);
               {categories.map((cat, idx) => {
                 const catProducts = products.filter((p) => p.category === cat);
                 const catVal = catProducts.reduce(

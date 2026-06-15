@@ -104,7 +104,7 @@ export default function ProductsPage({
                       </span>
                     </td>
                     <td className="py-4 px-6 text-right font-semibold text-slate-900 text-sm">
-                      {new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(product.price)}
+                      ${product.price.toLocaleString()}
                     </td>
                     <td className="py-4 px-6 text-center">
                       <span className={`inline-block px-3 py-1 rounded-lg text-sm font-bold ${
